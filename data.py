@@ -43,3 +43,16 @@ print(cars.iloc[:, [2]])
 
 # Print out cars_per_cap and drives_right as DataFrame
 print(cars.loc[:, ['cars_per_cap', 'drives_right']])
+import pandas as pd
+import numpy as np
+cars = pd.read_csv('cars.csv', index_col = 0)
+print(cars)
+bs = cars.loc[:,'cars_per_cap']
+isHuge = bs>500
+
+cpc = cars['cars_per_cap']
+between = np.logical_and(cpc > 100, cpc < 600)
+medium = cars[between]
+
+# Print medium
+print(medium)
