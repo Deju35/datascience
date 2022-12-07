@@ -56,3 +56,34 @@ medium = cars[between]
 
 # Print medium
 print(medium)
+
+
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+for lab, row in cars.iterrows():
+  print(lab) 
+  print(row)
+
+for lab,row in cars.iterrows():
+  print(lab + ":" +str(row['cars_per_cap']))
+
+#Add column (1)
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Code for loop that adds COUNTRY column
+for lab, row in cars.iterrows() :
+    cars.loc[lab, "COUNTRY"] = row["country"].upper()
+    
+# Print cars
+print(cars)
+
+#Add column (2)
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Use .apply(str.upper)
+cars["COUNTRY"] = cars["country"].apply(str.upper)
