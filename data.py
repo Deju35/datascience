@@ -15,3 +15,14 @@ cars.index = row_labels
 
 # Print cars again
 print(cars)
+
+import pandas as pd
+
+df = pd.read_csv('pal.csv')
+print(df)
+
+cars = pd.read_csv('pal.csv', index_col=0)
+print(cars)
+
+print(cars[['country','drives_right']])
+print(cars[0:3])
